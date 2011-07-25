@@ -1,0 +1,42 @@
+Graphical Rubiks Cube
+
+------------ GENERAL ------------
+
+This is a simple Java applet written to demonstrate the use of some concepts from vector calculus and linear algebra.
+To move the cube, click and drag the mouse.
+To rotate a side click the left or right mouse button on the center piece of the side you want to rotate.
+
+
+------------ SOURCE ------------
+
+The source dependency graph can be seen in depend.png. The program is separated into the virtual cube that is displayed (Cube and SubCube) and 
+the face color information (MetaCube and MetaSubCube). 
+
+The virtual cube is defined by the 8 simple points that would contain it in a sphere (ex. (-c,-c,-c) (-c,-c,c), ...) 
+The sub cubes, faces, and points are all defined in the same way. All of these points are then projected 
+onto the way user has oriented themselves using VirtualVect. 
+
+When the user drags the mouse, they are changing the orientation of this virtual space.
+The coordinates of the cube on the virtual axis always remain the same, the virtual axis changes with relation to the real axis via mouse drags, and
+the real axis corresponds to the pixels on the screen. When painting the faces, first the cubes are ordered based on their centers, then the centers' faces 
+are ordered by their centers and displayed.
+
+When rotation is set into effect, the 9 sub cubes of that side are tied to a different virtual axis which slowly rotates in relation to the 
+original virtual axis. After rotation has finished, the display cube is set back to its original state and the MetaCube is updated to 
+reflect the changed side colors.
+
+------------ INSTALL ------------
+
+To run from bytecode simply run result.html in your browser with Cube.jar in the same directory.
+
+To build from source run from a *nix environment:
+python setup.py build
+
+to clean:
+python setup.py clean
+
+To create dependency image:
+python setup.py graph
+
+Note that this image is created from the depend.dot file and not the source code itself.
+

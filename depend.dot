@@ -1,0 +1,21 @@
+digraph dependency {
+
+SubCube->VirtualVect
+SubCube->Point
+SubCube->Face
+
+Display->Cube
+
+Start->Display
+
+Face->Point
+
+Point->VirtualVect
+
+MetaCube->MetaSubCube
+
+Cube->SubCube
+Cube->VirtualVect
+Cube->MetaCube
+
+}
