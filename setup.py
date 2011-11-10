@@ -7,7 +7,7 @@ if len(sys.argv) > 1:
 		os.system('rm -r com')
 		os.system('rm depend.png')
 	elif sys.argv[1] == 'graph':
-		os.system('dot depend.dot -Tpng -o depend.png')
+		os.system('dot depend.dot -Tpng -o depend/depend.png')
 	elif sys.argv[1] == 'build':
 		res = os.system('javac -d . *.java')
 		if res != 0:
